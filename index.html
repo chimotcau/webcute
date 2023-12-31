@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>To Linh Chi</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://unpkg.com/boxicon@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        /* Add your styles for the effect here */
+        .success-effect {
+            color: green;
+            font-size: 20px;
+            margin-top: 15px;
+        }
+        .error-effect {
+            color: red;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="capybara"></div>
+        <div class="heart"></div>
+        <div class="wrapper">
+            <form id="loginForm">
+                <h1>Login</h1>
+                <div class="input-box">
+                    <input id="username" type="text" placeholder="Username" required>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-box">
+                    <input id="password" type="password" placeholder="Password" required>
+                </div>
+                <div class="remember-forgot">
+                    <a href="#">Remember Khoa?</a>
+                    <a href="#">Forgot Khoa?</a>
+                </div>
+                <button type="button" onclick="checkLogin()" class="btn">Login</button>
+                <div class="register-link">
+                    <p>Don't have an account? <a href="#">Register</a></p>
+                </div>
+                <div id="loginResult" class="error-effect"></div>
+            </form>
+        </div>
+    </div>
+    <script>
+        function checkLogin() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            var loginResult = document.getElementById('loginResult');
+            if (username === "linhchi" && password === "13082003") {
+                loginResult.innerText = "http://127.0.0.1:5501";
+                loginResult.className = "success-effect";
+            } else {
+                loginResult.innerText = "Incorrect username or password. Please try again.";
+                loginResult.className = "error-effect";
+            }
+        }
+    </script>
+</body>
+</html>
